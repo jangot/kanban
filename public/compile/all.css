@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+}
+.preFooter {
+  visibility: hidden;
+}
+
+.preFooter .navbar {
+  margin-bottom: 0;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer .navbar {
+  margin-bottom: 0;
+}
+
+
