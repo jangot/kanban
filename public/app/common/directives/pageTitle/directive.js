@@ -2,10 +2,10 @@ define([
 
     'app'
 
-], function(jShop) {
+], function(app) {
     "use strict";
 
-    jShop.directive('jShopPageTitle', function() {
+    app.directive('appPageTitle', function() {
         return {
             restrict: 'E',
             templateUrl: '/app/common/directives/pageTitle/template.html',

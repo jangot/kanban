@@ -3,10 +3,10 @@ define([
     'angular',
     'angularAMD'
 
-], function(jShop, angular, angularAMD){
+], function(app, angular, angularAMD){
     "use strict";
 
-    jShop.provider('routeConstructor', function(){
+    app.provider('routeConstructor', function(){
 
         var COMMON_RESOLVE = {};
         var menu = [];

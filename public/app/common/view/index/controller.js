@@ -2,10 +2,10 @@ define([
 
     'app'
 
-], function(jShop){
+], function(app){
     "use strict";
 
-    jShop.controller('CommonIndex', function(){
+    app.controller('CommonIndex', function(){
         console.log('state:controller:index');
     });
 });

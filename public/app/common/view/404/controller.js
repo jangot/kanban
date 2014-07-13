@@ -2,10 +2,10 @@ define([
 
     'app'
 
-], function(jShop){
+], function(app){
     "use strict";
 
-    jShop.controller('Common404', function(){
+    app.controller('Common404', function(){
         console.log('404');
     });
 });

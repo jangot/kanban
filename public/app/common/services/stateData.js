@@ -2,10 +2,10 @@ define([
 
     'app'
 
-], function(jShop) {
+], function(app) {
     "use strict";
 
-    jShop.provider('stateData', function() {
+    app.provider('stateData', function() {
         return {
             $get: function() {
                 return {

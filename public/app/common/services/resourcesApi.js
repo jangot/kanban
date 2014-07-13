@@ -4,14 +4,14 @@ define([
 
     'angular'
 
-], function(jShop, angular) {
+], function(app, angular) {
     "use strict";
 
     var PROTOCOL = 'http://';
     var HOST = '127.0.0.1:5000/';
     var URL_PREFIX = 'api/';
 
-    jShop.factory('jShopResourcesApi', function($resource){
+    app.factory('appResourcesApi', function($resource){
 
         var DEFAULT_ACTIONS = {
             get: { method: 'GET' },

@@ -1,6 +1,6 @@
 define([
 
-    'jShop',
+    'app',
 
     'angularAMD',
 
@@ -8,6 +8,6 @@ define([
     'guitars/config'
 
 
-], function(jShop, angularAMD) {
-    angularAMD.bootstrap(jShop);
+], function(app, angularAMD) {
+    angularAMD.bootstrap(app);
 });

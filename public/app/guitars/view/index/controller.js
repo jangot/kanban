@@ -2,10 +2,10 @@ define([
 
     'app'
 
-], function(jShop){
+], function(app){
     "use strict";
 
-    jShop.controller('GuitarsIndex', function($scope, Guitars){
+    app.controller('GuitarsIndex', function($scope, Guitars){
         var guitars = Guitars.get();
         console.log(guitars.$promise)
         guitars.$promise.then(function(){

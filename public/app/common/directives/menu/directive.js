@@ -4,10 +4,10 @@ define([
 
     'common/directives/menu/controller'
 
-], function(jShop, Controller) {
+], function(app, Controller) {
     "use strict";
 
-    jShop.directive('jShopMenu', function() {
+    app.directive('appMenu', function() {
         return {
             restrict: 'E',
             templateUrl: '/app/common/directives/menu/template.html',

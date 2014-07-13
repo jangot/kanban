@@ -2,10 +2,10 @@ define([
 
     'app'
 
-], function(jShop){
+], function(app){
     "use strict";
 
-    jShop.controller('CommonBody', function(){
+    app.controller('CommonBody', function(){
 
     });
 });

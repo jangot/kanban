@@ -1,13 +1,13 @@
 define([
 
-    '../jShop',
+    'app',
 
     'guitars/view/index/controller'
 
-], function(jShop) {
+], function(app) {
     "use strict";
 
-    jShop.config(function($stateProvider, routeConstructorProvider) {
+    app.config(function($stateProvider, routeConstructorProvider) {
         $stateProvider.state(
             'body.guitars',
             routeConstructorProvider.build({

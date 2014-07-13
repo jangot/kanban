@@ -2,10 +2,10 @@ define([
 
     'app'
 
-], function(jShop) {
+], function(app) {
     "use strict";
 
-    jShop.directive('jShopBreadcrumb', function() {
+    app.directive('appBreadcrumb', function() {
         return {
             restrict: 'E',
             templateUrl: '/app/common/directives/breadcrumb/template.html',

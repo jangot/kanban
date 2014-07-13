@@ -1,6 +1,6 @@
 define([
 
-    '../jShop',
+    'app',
 
     'angular',
 
@@ -19,14 +19,14 @@ define([
     'common/view/index/controller',
     'common/view/404/controller'
 
-], function(jShop, angular) {
+], function(app, angular) {
     "use strict";
-    jShop.config(function($locationProvider, $urlRouterProvider) {
+    app.config(function($locationProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/404');
 
         $locationProvider.html5Mode(true);
     });
-    jShop.config(function($stateProvider, routeConstructorProvider) {
+    app.config(function($stateProvider, routeConstructorProvider) {
         $stateProvider.state(
             'body',
             routeConstructorProvider.build({
@@ -59,7 +59,7 @@ define([
         );
     });
 
-    jShop.run(function(routeConstructor, menu) {
+    app.run(function(routeConstructor, menu) {
         var routeVars = routeConstructor.getVars();
         angular.forEach(routeVars.menu, function(value) {
             menu.push(value);

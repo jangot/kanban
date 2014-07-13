@@ -1,7 +1,6 @@
 require.config({
     baseUrl: '/app/',
     paths: {
-        app: 'app',
 
         jquery: '../bower_components/jquery/jquery',
 

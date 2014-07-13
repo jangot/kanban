@@ -2,8 +2,8 @@ define([
 
     'app'
 
-], function(jShop) {
+], function(app) {
     "use strict";
 
-    jShop.value('menu', []);
+    app.value('menu', []);
 });

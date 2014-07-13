@@ -4,13 +4,13 @@ define([
 
     'common/services/resourcesApi'
 
-], function(jShop) {
+], function(app) {
     "use strict";
 
     var RESOURCE_NAME = 'Guitars';
 
-    jShop.factory(RESOURCE_NAME, function(jShopResourcesApi) {
-        var Guitars = jShopResourcesApi('guitars/:id', { id: '@id' }, {
+    app.factory(RESOURCE_NAME, function(appResourcesApi) {
+        var Guitars = appResourcesApi('guitars/:id', { id: '@id' }, {
 //            all: {
 //                method:  'GET',
 //                url:     'guitars',

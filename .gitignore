@@ -1,4 +1,4 @@
-..idea
+.idea
  compile
  node_modules
  public/bower_components
