@@ -6,7 +6,6 @@ define([
 
     'common/directives/menu/directive',
     'common/directives/pageTitle/directive',
-    'common/directives/breadcrumb/directive',
     'common/directives/footer/directive',
 
     'common/services/stateData',

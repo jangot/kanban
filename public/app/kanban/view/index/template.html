@@ -1,0 +1,12 @@
+<div class="container boards">
+    <div class="row">
+        <div class="col-xs-3" ng-repeat="board in boards">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="taskId in board.tasks">
+                    <app-kanban-task task="tasks[taskId]"></app-kanban-task>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

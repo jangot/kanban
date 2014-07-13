@@ -3,6 +3,7 @@ Jangot kanban
 
 ### Installation
 npm install
+
 bower install
 
 ### Usage

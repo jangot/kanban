@@ -2,23 +2,25 @@ define([
 
     'app',
 
-    'guitars/view/index/controller'
+    'kanban/view/index/controller',
+
+    'kanban/directives/task/directive'
 
 ], function(app) {
     "use strict";
 
     app.config(function($stateProvider, routeConstructorProvider) {
         $stateProvider.state(
-            'body.guitars',
+            'body.kanban',
             routeConstructorProvider.build({
-                url: '/guitars',
-                view: 'guitars/index',
+                url: '/kanban',
+                view: 'kanban/index',
                 page: {
-                    title: 'Гитары'
+                    title: 'Boards'
                 },
                 menu: {
-                    state: 'body.guitars',
-                    title: 'Гитары'
+                    state: 'body.kanban',
+                    title: 'Boards'
                 }
             })
         );

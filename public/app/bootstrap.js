@@ -5,8 +5,7 @@ define([
     'angularAMD',
 
     'common/config',
-    'guitars/config'
-
+    'kanban/config'
 
 ], function(app, angularAMD) {
     angularAMD.bootstrap(app);

@@ -7,14 +7,16 @@ define([
 ], function(app, angular) {
     "use strict";
 
+    //http://localhost:8009/kanban
+
     var PROTOCOL = 'http://';
-    var HOST = '127.0.0.1:5000/';
-    var URL_PREFIX = 'api/';
+    var HOST = 'localhost:8009/';
+    var URL_PREFIX = 'data/';
 
     app.factory('appResourcesApi', function($resource){
 
         var DEFAULT_ACTIONS = {
-            get: { method: 'GET' },
+            get: { method: 'GET', isArray: true},
             save: { method: 'PUT'},
             query: { method: 'GET'},
             remove: { method: 'DELETE'},
