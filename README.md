@@ -1,12 +1,13 @@
-Jangot kanban
--------------------
+# Kanban on AngularJS
 
-### Installation
-npm install
+## Install
 
-bower install
+    npm install
+    npm install -g bower
+    npm install -g grunt-cli
+    bower install
 
-### Usage
-grunt
+## Start
 
-server - http://localhost:8009/
+    grunt
+    open "http://localhost:8009"
