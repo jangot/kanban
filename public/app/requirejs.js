@@ -3,6 +3,8 @@ require.config({
     paths: {
 
         jquery: '../bower_components/jquery/jquery',
+        jqueryUi: '../bower_components/jquery-ui/jquery-ui',
+        angularDragdrop: '../bower_components/angular-dragdrop/src/angular-dragdrop',
 
         lodash: '../bower_components/lodash/dist/lodash',
 
@@ -23,7 +25,9 @@ require.config({
         uiRouter: ['angular'],
         uiBootstrap: ['angular'],
         uiBootstrapTpl: ['angular'],
-        angularResource: ['angular']
+        angularResource: ['angular'],
+        jqueryUi: ['jquery'],
+        angularDragdrop: ['jqueryUi']
     },
     deps: ['bootstrap']
 });

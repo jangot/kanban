@@ -1,4 +1,7 @@
 <div class="task">
-    <h5>{{task.title}} <small>[{{task.id}}]</small></h5>
-    <p>{{task.description}}</p>
+    <div class="task-drop bg-primary" data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+         jqyoui-draggable="{animate:true}">
+        <h5>{{task.title}} <small>[{{task.id}}]</small></h5>
+        <p>{{task.description}}</p>
+    </div>
 </div>

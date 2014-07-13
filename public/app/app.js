@@ -7,10 +7,12 @@ define([
     'angularAMD',
 
     'uiBootstrap',
-    'uiBootstrapTpl'
+    'uiBootstrapTpl',
+
+    'angularDragdrop'
 
 ], function(angular) {
     return angular.module('app', [
-        'ui.router',  'ui.bootstrap', 'ngResource'
+        'ui.router',  'ui.bootstrap', 'ngResource', 'ngDragDrop'
     ]);
 });
