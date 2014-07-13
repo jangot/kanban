@@ -18,17 +18,17 @@ module.exports = function(builder) {
                 }
             ],
             import: [
-                '<%= publicPath %>/jShop/common/styles/import/variables.styl',
-                '<%= publicPath %>/jShop/common/styles/import/functions.styl',
-                '<%= publicPath %>/jShop/common/styles/import/mixins.styl'
+                '<%= publicPath %>/app/common/styles/import/variables.styl',
+                '<%= publicPath %>/app/common/styles/import/functions.styl',
+                '<%= publicPath %>/app/common/styles/import/mixins.styl'
             ]
         })
         .addConfig('stylus', 'compile', {
             files: {
                 '<%= compilePath %>/all.css': [
-                    '<%= publicPath %>/jShop/common/styles/start.styl',
-                    '<%= publicPath %>/jShop/**/style.styl',
-                    '<%= publicPath %>/jShop/common/styles/end.styl'
+                    '<%= publicPath %>/app/common/styles/start.styl',
+                    '<%= publicPath %>/app/**/style.styl',
+                    '<%= publicPath %>/app/common/styles/end.styl'
                 ]
             }
         })
