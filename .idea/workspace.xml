@@ -47,7 +47,17 @@
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.081743866" vertical-offset="0" max-vertical-offset="734">
-              <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+              <caret line="4" column="58" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap-slate.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/libs/css/bootstrap-slate.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="97747" max-vertical-offset="98565">
+              <caret line="6565" column="1" selection-start-line="6565" selection-start-column="1" selection-end-line="6565" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -628,10 +638,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/libs/css/bootstrap-slate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="97747" max-vertical-offset="98565">
+          <caret line="6565" column="1" selection-start-line="6565" selection-start-column="1" selection-end-line="6565" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.081743866" vertical-offset="0" max-vertical-offset="734">
-          <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+          <caret line="4" column="58" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="58" />
           <folding />
         </state>
       </provider>
