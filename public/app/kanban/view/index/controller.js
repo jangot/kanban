@@ -26,5 +26,9 @@ define([
         $q.all([tasks.$promise, boards.$promise]).then(function() {
             $scope.boards = boards;
         });
+
+        $scope.dropCallback = function() {
+            console.log(arguments)
+        }
     });
 });

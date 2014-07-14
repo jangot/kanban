@@ -1,8 +1,10 @@
 define([
 
-    '../../../app'
+    'app',
 
-], function(app) {
+    'kanban/directives/task/controller'
+
+], function(app, Controller) {
     "use strict";
 
     app.directive('appKanbanTask', function() {
@@ -12,7 +14,8 @@ define([
                 task: '='
             },
             templateUrl: '/app/kanban/directives/task/template.html',
-            link: function(scope, element, attrs) {}
+            link: function(scope, element, attrs) {},
+            controller: Controller
         }
     });
 });
