@@ -26,4 +26,12 @@ define([
         );
     });
 
+    app.run(function($rootScope, dataBoard) {
+        $rootScope.$watch(function() {
+            return dataBoard;
+        }, function() {
+            $rootScope.$emit('data:update')
+        }, true);
+    });
+
 });

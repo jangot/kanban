@@ -5,9 +5,9 @@ define([
 ], function(){
     "use strict";
 
-    return function($scope){
+    return function($scope, $rootScope){
         $scope.startCallback = function(item) {
-            console.log($scope.task)
+            $rootScope.$emit('startDrop', $scope.task);
         }
     }
 });
