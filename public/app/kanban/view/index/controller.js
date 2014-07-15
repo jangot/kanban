@@ -15,7 +15,6 @@ define([
         $scope.boards = [];
 
         function loadModels() {
-            console.log('load model')
             var tasks = Task.get();
             tasks.$promise.then(function() {
                 angular.forEach(tasks, function(task) {
@@ -44,12 +43,12 @@ define([
             promise.finaly(loadModels);
         }
 
-        $scope.saveBoard = function(board) {
-            console.log(board)
-            board.save();
-        }
+
 
         loadModels()
-        $rootScope.$on('data:update', loadModels);
+        $rootScope.$on('data:update',function(event, type) {
+            console.log('update model:', type);
+            loadModels();
+        });
     });
 });

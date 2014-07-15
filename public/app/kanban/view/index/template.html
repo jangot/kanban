@@ -1,22 +1,7 @@
 <div class="container boards">
     <div class="row">
-        <div class="col-xs-3" ng-repeat="board in boards">
-            <h3>{{board.title}}</h3>
-            <form role="form" ng-submit="saveBoard(board)" novalidate>
-                <div class="form-group">
-                    <input type="text" class="form-control" ng-model="board.title">
-                </div>
-            </form>
-            <ul class="list-group"
-                data-drop="true"
-                jqyoui-droppable="{
-                    index: {{$index}},
-                    onDrop:'dropCallback($index)'
-                 }">
-                <li class="list-group-item" ng-repeat="taskId in board.tasks">
-                    <app-kanban-task task="tasks[taskId]"></app-kanban-task>
-                </li>
-            </ul>
-        </div>
+        <app-kanban-board ng-repeat="board in boards"
+                          board="board"
+                          tasks="tasks"></app-kanban-board>
     </div>
 </div>

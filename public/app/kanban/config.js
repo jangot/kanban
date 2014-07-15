@@ -4,7 +4,8 @@ define([
 
     'kanban/view/index/controller',
 
-    'kanban/directives/task/directive'
+    'kanban/directives/task/directive',
+    'kanban/directives/board/directive'
 
 ], function(app) {
     "use strict";
@@ -26,11 +27,17 @@ define([
         );
     });
 
-    app.run(function($rootScope, dataBoard) {
+    app.run(function($rootScope, dataBoard, dataTask) {
         $rootScope.$watch(function() {
             return dataBoard;
         }, function() {
-            $rootScope.$emit('data:update')
+            $rootScope.$emit('data:update', 'board')
+        }, true);
+
+        $rootScope.$watch(function() {
+            return dataTask;
+        }, function() {
+            $rootScope.$emit('data:update', 'task')
         }, true);
     });
 

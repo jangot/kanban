@@ -2,12 +2,19 @@ define([
 
     'app',
 
-    'common/services/resourcesApi'
+    'angular',
+
+    'kanban/services/resourceCreator',
+    'kanban/data/task'
 
 ], function(app) {
     "use strict";
 
-    app.factory('Task', function(appResourcesApi) {
-        return appResourcesApi('task.json', {}, {});
+    var areas = [
+        'title', 'description'
+    ];
+
+    app.factory('Task', function($q, FakeResource, dataTask, resourceCreator) {
+        return resourceCreator(dataTask, areas, {});
     });
 });
