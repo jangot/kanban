@@ -19,7 +19,7 @@ require.config({
     shim: {
         angular: {
             exports: 'angular',
-            deps: ['jquery']
+            deps: ['jquery', 'lodash']
         },
         angularAMD: ['angular'],
         uiRouter: ['angular'],
@@ -27,7 +27,7 @@ require.config({
         uiBootstrapTpl: ['angular'],
         angularResource: ['angular'],
         jqueryUi: ['jquery'],
-        angularDragdrop: ['jqueryUi']
+        angularDragdrop: ['jquery', 'jqueryUi']
     },
     deps: ['bootstrap']
 });

@@ -6,7 +6,30 @@
             animate:true,
             onStart:'startCallback()'
          }">
-        <h5>{{task.title}} <small>[{{task.id}}]</small></h5>
-        <p>{{task.description}}</p>
+        <h5>
+            <span ng-hide="edit == 'title'" ng-click="startEdit('title')">
+                {{task.title}}
+            </span>
+            <input type="text"
+                   class="task-input"
+                   ng-show="edit == 'title'"
+                   ng-model="task.title"
+                   ng-keyup="keyUp($event)"
+                   app-prevent-default />
+        </h5>
+        <p>
+            <span ng-hide="edit == 'description'" ng-click="startEdit('description')">
+                {{task.description}}
+            </span>
+            <input type="text"
+                   class="task-input"
+                   ng-show="edit == 'description'"
+                   ng-model="task.description"
+                   ng-keyup="keyUp($event)"
+                   app-prevent-default />
+        </p>
+        <button type="button"
+                class="btn btn-default btn-xs"
+                ng-click="remove()">remove</button>
     </div>
 </div>

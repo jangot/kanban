@@ -8,6 +8,10 @@ define([
     'common/directives/pageTitle/directive',
     'common/directives/footer/directive',
 
+    'common/directives/preventDefault/directive',
+
+    'common/constants/key',
+
     'common/services/stateData',
     'common/services/routeConstructor',
     'common/services/menu',

@@ -11,7 +11,8 @@ define([
         return {
             restrict: 'E',
             scope: {
-                task: '='
+                task: '=',
+                board: '='
             },
             templateUrl: '/app/kanban/directives/task/template.html',
             link: function(scope, element, attrs) {},

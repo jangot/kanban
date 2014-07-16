@@ -2,12 +2,14 @@ define([
 
     'app',
 
+    'angular',
+
     'kanban/view/index/controller',
 
     'kanban/directives/task/directive',
     'kanban/directives/board/directive'
 
-], function(app) {
+], function(app, angular) {
     "use strict";
 
     app.config(function($stateProvider, routeConstructorProvider) {
@@ -37,8 +39,13 @@ define([
         $rootScope.$watch(function() {
             return dataTask;
         }, function() {
+            console.log('task watch')
             $rootScope.$emit('data:update', 'task')
         }, true);
+
+        angular.element('body').click(function() {
+            $rootScope.$emit('body:click');
+        });
     });
 
 });
