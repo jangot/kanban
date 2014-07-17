@@ -2,20 +2,20 @@ define([
 
     'app',
 
-    'kanban/directives/board/controller'
+    'kanban/directives/column/controller'
 
 ], function(app, Controller) {
     "use strict";
 
-    app.directive('appKanbanBoard', function() {
+    app.directive('appKanbanColumn', function() {
         return {
             restrict: 'E',
             replace: true,
             scope: {
                 board: '=',
-                tasks: '='
+                column: '='
             },
-            templateUrl: '/app/kanban/directives/board/template.html',
+            templateUrl: '/app/kanban/directives/column/template.html',
             link: function(scope, element, attrs) {},
             controller: Controller
         }

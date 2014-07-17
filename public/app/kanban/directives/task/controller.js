@@ -10,8 +10,15 @@ define([
     var body = angular.element('body');
 
 
-    return function($scope, $rootScope, KEY){
+    return function($scope, $rootScope, KEY, Task){
+        $scope.task = null;
+        function loadTask() {
+            $scope.task = Task.get($scope.taskId);
+            $scope.edit = null
+        }
+
         var clickByMe = false;
+
 
         $scope.edit = null;
         var originValue = null;
@@ -42,12 +49,19 @@ define([
         }
         $scope.remove = function() {
             var id = $scope.task.id;
-            $scope.board.removeTask(id);
+            $scope.column.removeTask(id);
         }
 
         $scope.startCallback = function(item) {
             $rootScope.$emit('startDrop', $scope.task);
         }
+
+        loadTask()
+        $rootScope.$on('data:update',function(event, type) {
+            if (type == 'task') {
+                loadTask();
+            }
+        });
 
         function bodyClick() {
             if (clickByMe) {

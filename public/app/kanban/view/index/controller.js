@@ -5,49 +5,46 @@ define([
     'angular',
 
     'kanban/resources/board',
+    'kanban/resources/column',
     'kanban/resources/task'
 
 ], function(app, angular){
     "use strict";
 
-    app.controller('KanbanIndex', function($scope, $rootScope, Board, Task, $q){
-        $scope.tasks = {};
-        $scope.boards = [];
+    app.controller('KanbanIndex', function($scope, $rootScope, Column, Task, Board,
+                                           dataAction, $q)
+    {
+        $scope.columns = {};
+        $scope.board = null;
 
         function loadModels() {
-            var tasks = Task.get();
-            tasks.$promise.then(function() {
-                angular.forEach(tasks, function(task) {
-                    $scope.tasks[task.id] = task;
+            var columns = Column.query();
+            columns.$promise.then(function() {
+                angular.forEach(columns, function(column) {
+                    $scope.columns[column.id] = column;
                 });
             });
 
-            var boards = Board.get();
-
-            $q.all([tasks.$promise, boards.$promise]).then(function() {
-                $scope.boards = boards;
+            var board = Board.get(0);
+            $q.all([board.$promise, columns.$promise]).then(function() {
+                $scope.board = board;
             });
         }
 
-        $scope.dropCallback = function(task, board, index) {
-            if (!task || ! board) {
-                console.warn('Data error');
+        $scope.createColumn = function() {
+            if ($scope.board.columns.length > 3) {
+                alert('You can not create more columns');
                 return;
             }
-            if (!index) {
-                index = 0;
-            }
-
-            board.tasks.splice(index, 0, task.id);
-            var promise = board.save();
-            promise.finaly(loadModels);
+            dataAction.columnCreate($scope.board, {
+                title: 'New column',
+                tasks: []
+            })
         }
 
-
-
         loadModels()
-        $rootScope.$on('data:update',function(event, type) {
-            console.log('update model:', type);
+        $rootScope.$on('data:update', function(a, type) {
+            console.log('data:update', type)
             loadModels();
         });
     });

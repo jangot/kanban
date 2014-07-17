@@ -1,8 +1,14 @@
-<div class="container boards">
-
+<div class="container">
+    <button type="button"
+            class="btn btn-default btn-xs"
+            ng-click="createColumn()">Add column</button>
     <div class="row">
-        <app-kanban-board ng-repeat="board in boards"
-                          board="board"
-                          tasks="tasks"></app-kanban-board>
+        <div class="col-xs-3" ng-repeat="columnId in board.columns">
+             <app-kanban-column column="columns[columnId]"
+                                board="board"></app-kanban-column>
+        </div>
+        <div class="col-xs-3">
+
+        </div>
     </div>
 </div>

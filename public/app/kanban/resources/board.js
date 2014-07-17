@@ -11,27 +11,27 @@ define([
     "use strict";
 
     var areas = [
-        'title', 'tasks'
+        'title', 'columns'
     ];
 
     app.factory('Board', function($q, FakeResource, dataBoard, resourceCreator) {
         return resourceCreator(dataBoard, areas, {
-            removeTask: function(id) {
-                _.remove(this.tasks, function(taskId) {
-                    return taskId === id;
+            removeColumn: function(id) {
+                _.remove(this.columns, function(columnId) {
+                    return columnId === id;
                 })
 
-                this.save();
+                return this.save();
             },
 
-            addTask: function(taskId, index) {
+            addColumn: function(boardId, index) {
                 if (!index) {
-                    index = this.tasks.length;
+                    index = this.columns.length;
                 }
 
-                this.tasks.splice(index ,0, taskId);
+                this.columns.splice(index ,0, boardId);
 
-                this.save();
+                return this.save();
             }
         });
     });

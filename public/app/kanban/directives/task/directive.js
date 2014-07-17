@@ -11,11 +11,13 @@ define([
         return {
             restrict: 'E',
             scope: {
-                task: '=',
-                board: '='
+                //TODO some bug
+                taskId: '=task',
+                column: '='
             },
             templateUrl: '/app/kanban/directives/task/template.html',
-            link: function(scope, element, attrs) {},
+            link: function(scope, element, attrs) {
+            },
             controller: Controller
         }
     });

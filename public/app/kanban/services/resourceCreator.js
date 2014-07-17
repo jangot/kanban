@@ -17,7 +17,7 @@ define([
         return object;
     }
 
-    app.factory('resourceCreator', function($q, FakeResource) {
+    app.factory('resourceCreator', function($q, FakeResource, $rootScope, $timeout) {
         return function(mainData, areas, proto) {
             var prototype = {
                 save: function() {
@@ -29,17 +29,18 @@ define([
                         this.id = mainData.length;
                         mainData.push(this);
                     } else {
-                        angular.forEach(mainData, function(boardInCommon, i) {
-                            if (boardInCommon.id == self.id) {
+                        angular.forEach(mainData, function(columnInCommon, i) {
+                            if (columnInCommon.id == self.id) {
                                 mainData[i] = copyAreas(self, mainData[i], areas);
                             }
                         });
                     }
 
-                    this.$promise = deferred.promise;
-                    deferred.resolve(this);
+                    $timeout(function() {
+                        deferred.resolve(self);
+                    }, 0);
 
-                    return this;
+                    return deferred.promise;
                 }
             }
 
@@ -53,7 +54,7 @@ define([
                 return result;
             };
 
-            DataConstructor.get = function() {
+            DataConstructor.query = function() {
                 var deferred = $q.defer();
                 var result = [];
                 result.$promise = deferred.promise;
@@ -61,8 +62,38 @@ define([
                 angular.forEach(mainData, function(value, i) {
                     result[i] = new DataConstructor(value);
                 });
-                deferred.resolve(result);
+                $timeout(function() {
+                    deferred.resolve(result);
+                }, 0);
 
+
+                return result;
+            }
+
+            DataConstructor.get = function(id) {
+                var data = null;
+
+                angular.forEach(mainData, function(value, i) {
+                    if (id == value.id) {
+                        data = value;
+                    }
+                });
+
+                var deferred = $q.defer();
+
+                if (!data) {
+                    deferred.reject();
+                    return {
+                        $promise: deferred.promise
+                    }
+                }
+
+                var result = new DataConstructor(data);
+                result.$promise = deferred.promise;
+
+                $timeout(function() {
+                    deferred.resolve(result);
+                }, 0);
                 return result;
             }
 

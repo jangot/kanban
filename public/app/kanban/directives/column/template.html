@@ -1,0 +1,17 @@
+<div>
+    <h3>{{column.title}}</h3>
+    <ul class="list-group"
+        data-drop="false"
+        jqyoui-droppable="{}">
+        <li class="list-group-item" ng-repeat="taskId in column.tasks">
+            <app-kanban-task task="taskId" column="column"></app-kanban-task>
+        </li>
+    </ul>
+
+    <button type="button"
+            class="btn btn-default btn-xs"
+            ng-click="remove()">Remove</button>
+    <button type="button"
+            class="btn btn-default btn-xs"
+            ng-click="createTask()">Add task</button>
+</div>

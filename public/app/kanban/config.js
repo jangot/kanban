@@ -7,7 +7,11 @@ define([
     'kanban/view/index/controller',
 
     'kanban/directives/task/directive',
-    'kanban/directives/board/directive'
+    'kanban/directives/column/directive',
+
+    'kanban/data/board',
+    'kanban/data/column',
+    'kanban/data/task'
 
 ], function(app, angular) {
     "use strict";
@@ -19,33 +23,34 @@ define([
                 url: '/kanban',
                 view: 'kanban/index',
                 page: {
-                    title: 'Boards'
+                    title: 'Main board'
                 },
                 menu: {
                     state: 'body.kanban',
-                    title: 'Boards'
+                    title: 'Main board'
                 }
             })
         );
     });
 
-    app.run(function($rootScope, dataBoard, dataTask) {
+    app.run(function($rootScope, dataBoard, dataColumn, dataTask) {
         $rootScope.$watch(function() {
-            return dataBoard;
+            return dataColumn;
         }, function() {
-            $rootScope.$emit('data:update', 'board')
+            $rootScope.$emit('data:update', 'column')
         }, true);
 
         $rootScope.$watch(function() {
             return dataTask;
         }, function() {
-            console.log('task watch')
             $rootScope.$emit('data:update', 'task')
         }, true);
 
-        angular.element('body').click(function() {
-            $rootScope.$emit('body:click');
-        });
+        $rootScope.$watch(function() {
+            return dataBoard;
+        }, function() {
+            $rootScope.$emit('data:update', 'board')
+        }, true);
     });
 
 });

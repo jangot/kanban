@@ -27,7 +27,7 @@ require.config({
         uiBootstrapTpl: ['angular'],
         angularResource: ['angular'],
         jqueryUi: ['jquery'],
-        angularDragdrop: ['jquery', 'jqueryUi']
+        angularDragdrop: ['jquery', 'jqueryUi', 'angular']
     },
     deps: ['bootstrap']
 });
