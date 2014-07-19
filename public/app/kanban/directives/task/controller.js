@@ -31,10 +31,11 @@ define([
         }
 
         loadTask()
-        $rootScope.$on('data:update',function(event, type) {
+        var unbind = $rootScope.$on('data:update',function(event, type) {
             if (type == 'task') {
                 loadTask();
             }
         });
+        $scope.$on('$destroy', unbind);
     }
 });

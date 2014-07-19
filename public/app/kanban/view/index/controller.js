@@ -43,9 +43,11 @@ define([
         }
 
         loadModels()
-        $rootScope.$on('data:update', function(a, type) {
-            console.log('data:update', type)
-            loadModels();
+        var unbind = $rootScope.$on('data:update', function(a, type) {
+            if (type == 'board' || type == 'column') {
+                loadModels();
+            }
         });
+        $scope.$on('$destroy', unbind);
     });
 });
