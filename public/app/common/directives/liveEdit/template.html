@@ -1,0 +1,9 @@
+<div class="liveEdit">
+    <div ng-hide="edit" ng-click="startEdit()">{{value}}</div>
+    <input ng-show="edit"
+           type="text"
+           class="liveEdit-input"
+           ng-model="value"
+           ng-keyup="keyUp($event)"
+           app-prevent-default />
+</div>

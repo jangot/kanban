@@ -7,7 +7,10 @@ define([
 ], function(){
     "use strict";
 
-    return function($scope, $rootScope, dataAction, Task){
+    return function($scope, $rootScope, dataAction){
+        $scope.saveColumn = function() {
+            $scope.column.save();
+        }
 
         $scope.createTask = function() {
             var params = {

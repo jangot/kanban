@@ -8,6 +8,7 @@ define([
     'common/directives/pageTitle/directive',
     'common/directives/footer/directive',
 
+    'common/directives/liveEdit/directive',
     'common/directives/preventDefault/directive',
 
     'common/constants/key',

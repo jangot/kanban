@@ -1,5 +1,8 @@
 <div>
-    <h3>{{column.title}}</h3>
+    <h3>
+        <app-live-edit value="column.title"
+                      save="saveColumn" ></app-live-edit>
+    </h3>
     <ul class="list-group"
         data-drop="false"
         jqyoui-droppable="{}">

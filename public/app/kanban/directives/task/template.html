@@ -7,26 +7,12 @@
             onStart:'startCallback()'
          }">
         <h5>
-            <span ng-hide="edit == 'title'" ng-click="startEdit('title')">
-                {{task.title}}
-            </span>
-            <input type="text"
-                   class="task-input"
-                   ng-show="edit == 'title'"
-                   ng-model="task.title"
-                   ng-keyup="keyUp($event)"
-                   app-prevent-default />
+            <app-live-edit value="task.title"
+                           save="taskSave" ></app-live-edit>
         </h5>
         <p>
-            <span ng-hide="edit == 'description'" ng-click="startEdit('description')">
-                {{task.description}}
-            </span>
-            <input type="text"
-                   class="task-input"
-                   ng-show="edit == 'description'"
-                   ng-model="task.description"
-                   ng-keyup="keyUp($event)"
-                   app-prevent-default />
+            <app-live-edit value="task.description"
+                           save="taskSave" ></app-live-edit>
         </p>
         <button type="button"
                 class="btn btn-default btn-xs"
