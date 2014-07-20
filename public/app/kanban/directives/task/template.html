@@ -8,15 +8,17 @@
             onStop: 'endDrug()'
          }"
          data-jqyoui-options="{
-            revert: 'invalid'
+            revert: 'invalid',
+            scope: 'task'
          }"
 
          data-drop="true"
          jqyoui-droppable="{
             index: 1,
-            onDrop:'dropCallback()'
+            onDrop:'dropCallback()',
+            tolerance: 'pointer'
          }">
-        <div>ID: {{task.id}}</div>
+        <div>{{index}}| ID: {{task.id}}</div>
         <h5>
             <app-live-edit value="task.title" save="taskSave" ></app-live-edit>
         </h5>

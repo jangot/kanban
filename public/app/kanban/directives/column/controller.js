@@ -33,8 +33,14 @@ define([
             $scope.board.removeColumn(id);
         }
 
-        $scope.inCallback = function() {
-            var task = drugAndDropBuffer.get('task');
+        $scope.dropCallback = function(e, ui, index) {
+            var drugTask = drugAndDropBuffer.get('dragTask');
+            var fromColumn = drugAndDropBuffer.get('fromColumn');
+
+            var promise = fromColumn.removeTask(drugTask.id);
+            promise.then(function() {
+                $scope.column.addTask(drugTask.id, index);
+            });
         }
 
         loadColumn();

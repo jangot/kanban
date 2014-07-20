@@ -15,6 +15,14 @@ define([
                 value: '=',
                 save: '='
             },
+            link: function(scope, element) {
+                var input = element.find('input');
+                scope.$watch('edit', function(val) {
+                    if (val === true) {
+                        input.focus();
+                    }
+                })
+            },
             controller: Controller
         }
     });

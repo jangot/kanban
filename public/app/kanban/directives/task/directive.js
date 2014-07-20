@@ -13,11 +13,11 @@ define([
             scope: {
                 //TODO some bug
                 taskId: '=task',
-                column: '='
+                column: '=',
+                index: '='
             },
             templateUrl: '/app/kanban/directives/task/template.html',
-            link: function(scope, element, attrs) {
-            },
+            link: function(scope, element, attrs) {},
             controller: Controller
         }
     });

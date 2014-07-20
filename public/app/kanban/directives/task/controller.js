@@ -10,13 +10,6 @@ define([
     "use strict";
 
     return function($scope, $rootScope, Task, drugAndDropBuffer){
-        var taskIndex = 0;
-        angular.forEach($scope.column.tasks, function(taskId, index) {
-            if (taskId == $scope.taskId) {
-                taskIndex = index;
-            }
-        });
-
         $scope.task = null;
         function loadTask() {
             $scope.task = Task.get($scope.taskId);
@@ -42,7 +35,7 @@ define([
         }
 
         $scope.dropCallback = function() {
-            var indexForAdd = taskIndex + 1;
+            var indexForAdd = $scope.index + 1;
             var drugTask = drugAndDropBuffer.get('dragTask');
             var fromColumn = drugAndDropBuffer.get('fromColumn');
 

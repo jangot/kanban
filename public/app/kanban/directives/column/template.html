@@ -1,22 +1,49 @@
-<div class="column">
-        <!--data-drop="true"-->
-     <!--jqyoui-droppable="{-->
-        <!--index: 1,-->
-        <!--onDrop:'inCallback()'-->
-     <!--}">-->
-    <h3>
-        <app-live-edit value="column.title" save="saveColumn" ></app-live-edit>
-    </h3>
-    <ul class="list-group">
+<div class="column"
+     data-drag="true"
+     jqyoui-draggable="{
+        index: 1,
+        animate:true,
+        scope: 'column'
+     }"
+     data-jqyoui-options="{
+        revert: 'invalid'
+     }">
+
+    <div class="column-header"
+         data-drop="true"
+         data-jqyoui-options="{
+            scope: 'task'
+         }"
+         jqyoui-droppable="{
+            index: 1,
+            onDrop:'dropCallback(0)',
+            scope: 'task'
+         }">
+        <h3>
+            <app-live-edit value="column.title" save="saveColumn" ></app-live-edit>
+        </h3>
+    </div>
+    <ul class="list-group column-list">
         <li class="list-group-item column-item" ng-repeat="taskId in column.tasks">
-            <app-kanban-task task="taskId" column="column"></app-kanban-task>
+            <app-kanban-task task="taskId" column="column" index="$index"></app-kanban-task>
         </li>
     </ul>
 
-    <button type="button"
-            class="btn btn-default btn-xs"
-            ng-click="remove()">Remove</button>
-    <button type="button"
-            class="btn btn-default btn-xs"
-            ng-click="createTask()">Add task</button>
+    <div class="column-footer"
+         data-drop="true"
+         data-jqyoui-options="{
+            scope: 'task'
+         }"
+         jqyoui-droppable="{
+            index: 1,
+            onDrop:'dropCallback()',
+            scope: 'task'
+         }">
+        <button type="button"
+                class="btn btn-default btn-xs"
+                ng-click="remove()">Remove</button>
+        <button type="button"
+                class="btn btn-default btn-xs"
+                ng-click="createTask()">Add task</button>
+    </div>
 </div>

@@ -25,7 +25,7 @@ define([
             },
 
             addTask: function(taskId, index) {
-                if (!index) {
+                if (index === undefined) {
                     index = this.tasks.length;
                 }
 
