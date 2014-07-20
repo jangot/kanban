@@ -31,11 +31,7 @@ define([
         }
 
         loadTask()
-        var unbind = $rootScope.$on('data:update',function(event, type) {
-            if (type == 'task') {
-                loadTask();
-            }
-        });
+        var unbind = $rootScope.$on('data:update:task', loadTask);
         $scope.$on('$destroy', unbind);
     }
 });

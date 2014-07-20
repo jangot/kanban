@@ -37,22 +37,22 @@ define([
         $rootScope.$watch(function() {
             return dataColumn;
         }, function() {
-            $rootScope.$emit('data:update', 'column');
-            console.log('data:update', 'column');
+            $rootScope.$emit('data:update:column', 'column');
+            console.log('data:update:column');
         }, true);
 
         $rootScope.$watch(function() {
             return dataTask;
         }, function() {
-            $rootScope.$emit('data:update', 'task');
-            console.log('data:update', 'task');
+            $rootScope.$emit('data:update:task', 'task');
+            console.log('data:update:task');
         }, true);
 
         $rootScope.$watch(function() {
             return dataBoard;
         }, function() {
-            $rootScope.$emit('data:update', 'board');
-            console.log('data:update', 'board');
+            $rootScope.$emit('data:update:board', 'board');
+            console.log('data:update:board');
         }, true);
     });
 
