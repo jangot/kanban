@@ -29,8 +29,7 @@ define([
                     index = this.tasks.length;
                 }
 
-                this.tasks.splice(index ,0, taskId);
-
+                this.tasks.splice(index , 0, taskId);
                 return this.save();
             }
         });

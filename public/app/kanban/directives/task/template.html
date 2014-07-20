@@ -1,18 +1,27 @@
 <div class="task">
     <div class="task-drop bg-primary"
-         data-drag="task"
-         data-jqyoui-options="{revert: 'invalid'}"
+         data-drag="true"
          jqyoui-draggable="{
+            index: 1,
             animate:true,
-            onStart:'startCallback()'
+            onStart: 'startDrug(task)',
+            onStop: 'endDrug()'
+         }"
+         data-jqyoui-options="{
+            revert: 'invalid'
+         }"
+
+         data-drop="true"
+         jqyoui-droppable="{
+            index: 1,
+            onDrop:'dropCallback()'
          }">
+        <div>ID: {{task.id}}</div>
         <h5>
-            <app-live-edit value="task.title"
-                           save="taskSave" ></app-live-edit>
+            <app-live-edit value="task.title" save="taskSave" ></app-live-edit>
         </h5>
         <p>
-            <app-live-edit value="task.description"
-                           save="taskSave" ></app-live-edit>
+            <app-live-edit value="task.description" save="taskSave" ></app-live-edit>
         </p>
         <button type="button"
                 class="btn btn-default btn-xs"

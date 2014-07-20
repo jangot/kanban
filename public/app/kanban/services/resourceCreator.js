@@ -17,7 +17,9 @@ define([
         return object;
     }
 
+    var UPDATE_DELAY = 0;
     app.factory('resourceCreator', function($q, FakeResource, $rootScope, $timeout) {
+
         return function(mainData, areas, proto) {
             var prototype = {
                 save: function() {
@@ -38,7 +40,7 @@ define([
 
                     $timeout(function() {
                         deferred.resolve(self);
-                    }, 0);
+                    }, UPDATE_DELAY);
 
                     return deferred.promise;
                 }
@@ -64,7 +66,7 @@ define([
                 });
                 $timeout(function() {
                     deferred.resolve(result);
-                }, 0);
+                }, UPDATE_DELAY);
 
 
                 return result;
@@ -93,7 +95,7 @@ define([
 
                 $timeout(function() {
                     deferred.resolve(result);
-                }, 0);
+                }, UPDATE_DELAY);
                 return result;
             }
 

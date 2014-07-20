@@ -1,10 +1,14 @@
-<div>
+<div class="column">
+        <!--data-drop="true"-->
+     <!--jqyoui-droppable="{-->
+        <!--index: 1,-->
+        <!--onDrop:'inCallback()'-->
+     <!--}">-->
     <h3>
-        <app-live-edit value="column.title"
-                      save="saveColumn" ></app-live-edit>
+        <app-live-edit value="column.title" save="saveColumn" ></app-live-edit>
     </h3>
     <ul class="list-group">
-        <li class="list-group-item" ng-repeat="taskId in column.tasks">
+        <li class="list-group-item column-item" ng-repeat="taskId in column.tasks">
             <app-kanban-task task="taskId" column="column"></app-kanban-task>
         </li>
     </ul>

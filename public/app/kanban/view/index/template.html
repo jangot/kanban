@@ -4,11 +4,8 @@
             ng-click="createColumn()">Add column</button>
     <div class="row">
         <div class="col-xs-3" ng-repeat="columnId in board.columns">
-             <app-kanban-column column="columns[columnId]"
+             <app-kanban-column column="columnId"
                                 board="board"></app-kanban-column>
-        </div>
-        <div class="col-xs-3">
-
         </div>
     </div>
 </div>
