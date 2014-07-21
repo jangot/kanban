@@ -39,6 +39,13 @@ define([
             var drugTask = drugAndDropBuffer.get('dragTask');
             var fromColumn = drugAndDropBuffer.get('fromColumn');
 
+            if (fromColumn.id === $scope.column.id) {
+                var oldIndex = $scope.column.tasks.indexOf(drugTask.id);
+                if(oldIndex < indexForAdd) {
+                    indexForAdd--;
+                }
+            }
+
             var promise = fromColumn.removeTask(drugTask.id);
             promise.then(function() {
                 $scope.column.addTask(drugTask.id, indexForAdd);

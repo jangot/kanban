@@ -14,6 +14,10 @@ define([
         'title', 'tasks'
     ];
 
+    function haveTask(column, id) {
+
+    }
+
     app.factory('Column', function($q, FakeResource, dataColumn, resourceCreator) {
         return resourceCreator(dataColumn, areas, {
             removeTask: function(id) {

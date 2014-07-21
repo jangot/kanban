@@ -22,7 +22,7 @@ define([
 
         return function(mainData, areas, proto) {
             var prototype = {
-                save: function() {
+                save: function(dataToResolve) {
                     var deferred = $q.defer();
 
                     var self = this;
@@ -39,7 +39,7 @@ define([
                     }
 
                     $timeout(function() {
-                        deferred.resolve(self);
+                        deferred.resolve(self, dataToResolve);
                     }, UPDATE_DELAY);
 
                     return deferred.promise;
