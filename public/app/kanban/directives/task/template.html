@@ -18,8 +18,7 @@
             onDrop:'dropCallback()',
             tolerance: 'pointer'
          }">
-        <div>{{index}}| ID: {{task.id}}</div>
-        <h5>
+        <h5 class="task-title">
             <app-live-edit value="task.title" save="taskSave" ></app-live-edit>
         </h5>
         <p>

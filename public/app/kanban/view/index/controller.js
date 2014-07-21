@@ -12,7 +12,7 @@ define([
     "use strict";
 
     app.controller('KanbanIndex', function($scope, $rootScope, Column, Task, Board,
-                                           dataAction, $q)
+                                           dataAction, drugAndDropBuffer)
     {
         $scope.board = null;
 
@@ -32,6 +32,16 @@ define([
             dataAction.columnCreate($scope.board, {
                 title: 'New column',
                 tasks: []
+            });
+        }
+
+        $scope.dropColumn = function(e, ui, index) {
+            var drugColumn = drugAndDropBuffer.get('dragColumn');
+            var fromBoard = drugAndDropBuffer.get('fromBoard');
+
+            var promise = fromBoard.removeColumn(drugColumn.id);
+            promise.then(function() {
+                $scope.board.addColumn(drugColumn.id, index);
             });
         }
 

@@ -25,7 +25,7 @@ define([
             },
 
             addColumn: function(boardId, index) {
-                if (!index) {
+                if (index === undefined) {
                     index = this.columns.length;
                 }
 

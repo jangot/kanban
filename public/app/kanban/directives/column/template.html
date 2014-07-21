@@ -1,13 +1,23 @@
 <div class="column"
      data-drag="true"
      jqyoui-draggable="{
-        index: 1,
+        index: 10,
         animate:true,
-        scope: 'column'
+        scope: 'column',
+        onStart: 'startDrugColumn(column)',
+        onStop: 'endDrugColumn()'
      }"
      data-jqyoui-options="{
+        scope: 'column',
         revert: 'invalid'
-     }">
+     }"
+
+     data-drop="true"
+     jqyoui-droppable="{
+            index: 10,
+            onDrop:'dropColumn()',
+            tolerance: 'pointer'
+         }">
 
     <div class="column-header"
          data-drop="true"
@@ -16,7 +26,7 @@
          }"
          jqyoui-droppable="{
             index: 1,
-            onDrop:'dropCallback(0)',
+            onDrop:'dropTask(0)',
             scope: 'task'
          }">
         <h3>
@@ -36,7 +46,7 @@
          }"
          jqyoui-droppable="{
             index: 1,
-            onDrop:'dropCallback()',
+            onDrop:'dropTask()',
             scope: 'task'
          }">
         <button type="button"

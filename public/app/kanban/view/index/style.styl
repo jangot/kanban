@@ -1,0 +1,29 @@
+.board
+  position relative
+
+  &-addButton
+    position relative
+    z-index 2
+
+  &-list
+    _position relative
+    _z-index 5
+
+  &-before
+  &-after
+    top 0
+    bottom 0
+    position absolute
+    z-index 0
+
+  &-before
+    width 50%
+    left -45%
+
+  &-after
+    display none
+    width 100%
+    left 6%
+
+  .ui-draggable-drugging
+    border 1px green solid

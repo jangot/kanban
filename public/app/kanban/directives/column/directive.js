@@ -13,7 +13,8 @@ define([
             replace: true,
             scope: {
                 board: '=',
-                columnId: '=column'
+                columnId: '=column',
+                index: '='
             },
             templateUrl: '/app/kanban/directives/column/template.html',
             controller: Controller
