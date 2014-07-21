@@ -1,7 +1,10 @@
 <div class="board container">
-    <button type="button"
-            class="btn btn-default btn-xs board-addButton"
-            ng-click="createColumn()">Add column</button>
+    <div class="board-manipulation">
+        <button type="button"
+                class="btn btn-default btn-s board-addButton"
+                ng-click="createColumn()">Add column</button>
+        <app-edit-data></app-edit-data>
+    </div>
     <div class="row">
 
         <div class="board-before"

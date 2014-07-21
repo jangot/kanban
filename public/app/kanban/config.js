@@ -8,6 +8,7 @@ define([
 
     'kanban/directives/task/directive',
     'kanban/directives/column/directive',
+    'kanban/directives/editData/directive',
 
     'kanban/data/board',
     'kanban/data/column',
