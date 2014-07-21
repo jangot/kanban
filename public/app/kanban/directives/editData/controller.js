@@ -37,10 +37,16 @@ define([
     return function($scope, dataColumn, dataTask, $timeout){
         $scope.show = true;
 
+        var columnIndex = 0;
         function getRandomColumn() {
-            var i = getRandomInt(0, dataColumn.length - 1);
+            var result = dataColumn[columnIndex];
 
-            return dataColumn[i];
+            columnIndex++
+            if (columnIndex == dataColumn.length) {
+                columnIndex = 0;
+            }
+            
+            return result;
         }
 
         function getTaskById(id) {
@@ -52,15 +58,15 @@ define([
         }
 
         $scope.changeData = function() {
-            var column = getRandomColumn();
-            var taskId = getRandomInt(0, column.tasks.length -1);
-            if (!taskId) {
-                return;
-            }
-
-            var task = getTaskById(taskId);
             $scope.show = false;
 
+            var column = getRandomColumn();
+            var taskIndex = getRandomInt(0, column.tasks.length -1);
+            var task = getTaskById(column.tasks[taskIndex]);
+
+            if (!task) {
+                return;
+            }
             $scope.$evalAsync(function() {
                 task.title = getRandomName();
                 $timeout(function() {

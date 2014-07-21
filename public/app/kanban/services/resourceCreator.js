@@ -17,6 +17,7 @@ define([
         return object;
     }
 
+
     var UPDATE_DELAY = 0;
     app.factory('resourceCreator', function($q, FakeResource, $rootScope, $timeout) {
 
@@ -29,7 +30,9 @@ define([
 
                     if (this.id === undefined) {
                         this.id = mainData.length;
-                        mainData.push(this);
+                        var newObject = copyAreas(this, {}, areas);
+                        newObject.id = this.id;
+                        mainData.push(newObject);
                     } else {
                         angular.forEach(mainData, function(columnInCommon, i) {
                             if (columnInCommon.id == self.id) {
