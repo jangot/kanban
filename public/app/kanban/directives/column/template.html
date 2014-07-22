@@ -1,4 +1,5 @@
 <div class="column"
+     ng-class="{column_drug: drug}"
      data-drag="true"
      jqyoui-draggable="{
         index: 10,
@@ -49,17 +50,21 @@
         </ul>
     </div>
 
-
-    <div class="column-footer"
+    <div ng-if="column.tasks.length == 0"
+         class="column-add"
          data-drop="true"
          data-jqyoui-options="{
-            scope: 'task'
+            scope: 'task',
+            hoverClass: 'column-add_hover'
          }"
          jqyoui-droppable="{
             index: 1,
             onDrop:'dropTask()',
             scope: 'task'
          }">
+    </div>
+
+    <div class="column-footer">
         <button type="button"
                 class="btn btn-default btn-xs"
                 ng-click="remove()">Remove</button>
