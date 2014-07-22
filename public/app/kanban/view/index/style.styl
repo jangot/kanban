@@ -1,27 +1,57 @@
 .board
   position relative
 
+  &:after
+  &:before
+    display none
+
   &-manipulation
-    margin-bottom 20px
+    height 50px
+    position absolute
+    top 0
+    left 15px
 
   &-addButton
     position relative
     z-index 2
 
+  &-taskList
+    height 100%
+    box-sizing border-box
+    padding-top 50px
+    margin-right 0px
+    margin-left 0px
+    overflow auto
+    white-space nowrap
+
+    *
+      white-space normal
+
   &-list
-    _position relative
-    _z-index 5
+    height 99%
+    overflow auto
+    padding 0 0 0 0
+    display inline-block
+    width 25%
 
   &-before
   &-after
-    top 0
-    bottom 0
+    top 50px
+    bottom 4px
     position absolute
     z-index 0
 
   &-before
     width 50%
-    left -45%
+    left -50%
+    margin-left 13px
+    border-right 3px transparent solid
+
+    &_hover
+      border-color #c0c0c0
+
+    &_addBefore
+      border-bottom 3px solver solid
 
   &-after
     display none

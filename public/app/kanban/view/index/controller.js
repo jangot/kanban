@@ -25,10 +25,6 @@ define([
         }
 
         $scope.createColumn = function() {
-            if ($scope.board.columns.length > 3) {
-                alert('You can not create more columns');
-                return;
-            }
             dataAction.columnCreate($scope.board, {
                 title: 'New column',
                 tasks: []

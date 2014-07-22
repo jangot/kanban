@@ -25,11 +25,13 @@ define([
         }
 
         $scope.startDrug = function(event, grugdata, task) {
+            $scope.drug = true;
             drugAndDropBuffer.put('dragTask', task);
             drugAndDropBuffer.put('fromColumn', $scope.column);
         }
 
         $scope.endDrug = function() {
+            $scope.drug = false;
             drugAndDropBuffer.clear('dragTask');
             drugAndDropBuffer.clear('fromColumn');
         }

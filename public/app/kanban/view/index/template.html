@@ -1,22 +1,23 @@
-<div class="board container">
+<div class="board container" app-content-size="content">
     <div class="board-manipulation">
         <button type="button"
                 class="btn btn-default btn-s board-addButton"
                 ng-click="createColumn()">Add column</button>
         <app-edit-data></app-edit-data>
     </div>
-    <div class="row">
-
-        <div class="board-before"
-             data-drop="true"
-             data-jqyoui-options="{
-                scope: 'column'
+    <div class="board-before"
+         data-drop="true"
+         data-jqyoui-options="{
+                scope: 'column',
+                hoverClass: 'board-before_hover',
              }"
-             jqyoui-droppable="{
+         jqyoui-droppable="{
                 index: 1,
                 onDrop:'dropColumn(0)',
                 scope: 'column'
              }"></div>
+    <div class="row board-taskList">
+
         <div class="board-after"
              data-drop="true"
              data-jqyoui-options="{
@@ -28,7 +29,7 @@
                 scope: 'column'
              }"></div>
 
-        <div class="col-xs-3 board-list" ng-repeat="columnId in board.columns">
+        <div class="board-list" ng-repeat="columnId in board.columns">
              <app-kanban-column column="columnId"
                                 board="board"
                                 index="$index"></app-kanban-column>

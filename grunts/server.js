@@ -6,7 +6,7 @@ module.exports = function(builder) {
         .addModule('grunt-contrib-connect')
 
         .addConfig('connect', 'options', {
-            hostname: 'guitar.local',
+            hostname: 'localhost',
             middleware: function(connect, options) {
                 return [
                     require('connect-livereload')(),

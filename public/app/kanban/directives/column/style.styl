@@ -1,17 +1,49 @@
 .column
   padding 0
-  border 1px white solid
-  min-height 300px
+  height 100%
   background darkslategrey
+  border 1px white solid
+  position relative
+  margin-right 3px
+
+  &_hover
+    border-right 4px silver solid
+    margin-right 0
+
+  body > &
+    height 200px
+    width 200px
+    overflow hidden
 
   &-header
     padding 1px 0
+    border-bottom 3px darkslategrey solid
+    height 50px
+    position absolute
+    top 0
+    left 0
+    right 0
+
+    &_hover
+      border-bottom 3px silver solid
 
   &-list
     margin 0
+    height 100%
+    overflow auto
+
+    &-wrapper
+      height 100%
+      box-sizing border-box
+      padding-top 50px
+      padding-bottom 35px
 
   &-footer
-    padding-top 20px
+    height 30px
+    position absolute
+    bottom 0
+    left 0
+    right 0
 
   &-item
     padding 0

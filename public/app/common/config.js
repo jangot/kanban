@@ -10,6 +10,7 @@ define([
 
     'common/directives/liveEdit/directive',
     'common/directives/preventDefault/directive',
+    'common/directives/contentHeight/directive',
 
     'common/constants/key',
 

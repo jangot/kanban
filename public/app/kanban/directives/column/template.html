@@ -9,20 +9,28 @@
      }"
      data-jqyoui-options="{
         scope: 'column',
-        revert: 'invalid'
+        revert: 'invalid',
+        hoverClass: 'column_hover',
+        appendTo: 'body',
+        helper: 'clone',
+        cursorAt: {
+            left: 5,
+            top: 5
+        },
+        tolerance: 'pointer'
      }"
 
      data-drop="true"
      jqyoui-droppable="{
             index: 10,
-            onDrop:'dropColumn()',
-            tolerance: 'pointer'
+            onDrop:'dropColumn()'
          }">
 
     <div class="column-header"
          data-drop="true"
          data-jqyoui-options="{
-            scope: 'task'
+            scope: 'task',
+            hoverClass: 'column-header_hover'
          }"
          jqyoui-droppable="{
             index: 1,
@@ -33,11 +41,14 @@
             <app-live-edit value="column.title" save="saveColumn" ></app-live-edit>
         </h3>
     </div>
-    <ul class="list-group column-list">
-        <li class="list-group-item column-item" ng-repeat="taskId in column.tasks">
-            <app-kanban-task task="taskId" column="column" index="$index"></app-kanban-task>
-        </li>
-    </ul>
+    <div class="column-list-wrapper">
+        <ul class="list-group column-list">
+            <li class="list-group-item column-item" ng-repeat="taskId in column.tasks">
+                <app-kanban-task task="taskId" column="column" index="$index"></app-kanban-task>
+            </li>
+        </ul>
+    </div>
+
 
     <div class="column-footer"
          data-drop="true"

@@ -45,7 +45,7 @@ define([
             if (columnIndex == dataColumn.length) {
                 columnIndex = 0;
             }
-            
+
             return result;
         }
 

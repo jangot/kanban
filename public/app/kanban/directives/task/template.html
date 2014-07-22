@@ -1,4 +1,4 @@
-<div class="task">
+<div class="task" ng-class="{'task_drug': drug}">
     <div class="task-drop bg-primary"
          data-drag="true"
          jqyoui-draggable="{
@@ -9,7 +9,14 @@
          }"
          data-jqyoui-options="{
             revert: 'invalid',
-            scope: 'task'
+            scope: 'task',
+            hoverClass: 'task-drop_hover',
+            appendTo: 'body',
+            helper: 'clone',
+            cursorAt: {
+                left: 5,
+                top: 5
+            }
          }"
 
          data-drop="true"
