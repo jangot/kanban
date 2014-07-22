@@ -48,21 +48,21 @@
                 <app-kanban-task task="taskId" column="column" index="$index"></app-kanban-task>
             </li>
         </ul>
+        <div class="column-add"
+             data-drop="true"
+             data-jqyoui-options="{
+                scope: 'task',
+                hoverClass: 'column-add_hover'
+             }"
+             jqyoui-droppable="{
+                index: 1,
+                onDrop:'dropTask()',
+                scope: 'task'
+             }">
+        </div>
     </div>
 
-    <div ng-if="column.tasks.length == 0"
-         class="column-add"
-         data-drop="true"
-         data-jqyoui-options="{
-            scope: 'task',
-            hoverClass: 'column-add_hover'
-         }"
-         jqyoui-droppable="{
-            index: 1,
-            onDrop:'dropTask()',
-            scope: 'task'
-         }">
-    </div>
+
 
     <div class="column-footer">
         <button type="button"
