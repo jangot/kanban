@@ -2,15 +2,18 @@ define([
 
     'app',
 
+    'angular',
+
     'kanban/services/dataAction',
 
     'kanban/services/drugAndDropBuffer'
 
-], function(){
+], function(app, angular){
     "use strict";
 
     return function($scope, $rootScope, Column, dataAction, drugAndDropBuffer){
         $scope.column = null;
+        $scope.topDrop = true;
         function loadColumn() {
             $scope.column = Column.get($scope.columnId);
         }
@@ -44,13 +47,17 @@ define([
         }
 
         $scope.startDrugColumn = function(event, grugdata, column) {
+            angular.element('body>.column')
+                .height($scope.height)
+                .width($scope.width);
+
             $scope.drug = true;
             drugAndDropBuffer.put('dragColumn', column);
             drugAndDropBuffer.put('fromBoard', $scope.board);
         }
 
         $scope.endDrugColumn = function() {
-            $scope.drug = true;
+            $scope.drug = false;
             drugAndDropBuffer.clear('dragColumn');
             drugAndDropBuffer.clear('fromBoard');
         }

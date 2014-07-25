@@ -25,6 +25,8 @@ define([
         }
 
         $scope.startDrug = function(event, grugdata, task) {
+            angular.element('body>.task').width($scope.width);
+
             $scope.drug = true;
             drugAndDropBuffer.put('dragTask', task);
             drugAndDropBuffer.put('fromColumn', $scope.column);

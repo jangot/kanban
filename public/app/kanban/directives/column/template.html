@@ -14,11 +14,8 @@
         hoverClass: 'column_hover',
         appendTo: 'body',
         helper: 'clone',
-        cursorAt: {
-            left: 5,
-            top: 5
-        },
-        tolerance: 'pointer'
+        tolerance: 'pointer',
+        cursor: 'move'
      }"
 
      data-drop="true"
@@ -28,7 +25,7 @@
          }">
 
     <div class="column-header"
-         data-drop="true"
+         data-drop="{{topDrop}}"
          data-jqyoui-options="{
             scope: 'task',
             hoverClass: 'column-header_hover'
